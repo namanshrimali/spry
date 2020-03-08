@@ -1,0 +1,25 @@
+<div class="starred" *ngIf="userAssociatedProducts.starred">
+  <h1>STARRED</h1>
+  <div class= "card-product">
+      <mat-card class="example-card" *ngFor="let product of userAssociatedProducts.starred">
+        <img mat-card-image src="../../assets/images/product-card 1.jpg" alt={{product.name}}>
+        <mat-card-content>
+          <div class="card-title">{{product.name}}</div>
+          <div class="star-icon"><i class="material-icons">star</i></div>
+        </mat-card-content>
+      </mat-card>
+  </div>
+</div>
+
+<div class="all-products">
+  <h1>All Products</h1>
+  <div class= "card-product">
+      <mat-card class="example-card" *ngFor="let product of userAssociatedProducts.all">
+        <img mat-card-image src="../../assets/images/product-card.jpg" alt={{product.name}}>
+        <mat-card-content>
+          <div class="card-title">{{product.name}}</div>
+          <div class="star-icon"><i class="material-icons">star_outline</i></div>
+        </mat-card-content>
+      </mat-card>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+.content
+  margin-top: 30px
+  letter-spacing: 1px
+\:host ::ng-deep .mat-select-value-text
+  color: #f1f1f1
+  text-decoration: none
+  font-size: 27px
+  margin-top:5px
+.facade-view
+  display: flex
+  flex-direction: row
+  margin-left: 20px
+  margin-right: 10px
+mat-form-field
+  padding-top: 15px
+  display: none
+  width: 150px
+.sidenav 
+  min-width: 120px
+  margin-right: 100px
+  top: 0
+  overflow-x: hidden
+  overflow: hidden
+  padding-top: 35px
+.sidenav a
+  padding: 0px 8px 16px 16px
+  text-decoration: none
+  font-size: 15px
+  color: #818181
+  display: block
+  transition: 0.3s
+  margin-top:5px
+  display: flex
+  align-items: inherit
+  justify-content: flex-start
+.sidenav a.active
+  color: #f1f1f1
+.sidenav .material-icons
+  margin-right: 20px
+  font-size: 20px
+
+@media screen and (max-width: 1024px)
+  .sidenav
+    display: none
+  mat-form-field
+    display: block
+  .facade-view
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+  .content
+    margin-top: 10px
+
+

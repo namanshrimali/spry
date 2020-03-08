@@ -1,0 +1,58 @@
+.card-product
+  display: grid
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr
+.card-title
+  font-weight: 350
+  font-size: 13px
+  color: #f1f1f1
+  letter-spacing: 1px
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  width: 80%
+.example-card
+  max-width: 265px
+  margin-right: 10px
+  margin-bottom: 10px
+  background-color: #2424246e
+  overflow: hidden
+.example-card:hover
+  cursor: pointer
+.example-card:hover img
+  filter: brightness(50%)
+.example-card:hover .star-icon
+  visibility: visible
+h1
+  color: #f1f1f1
+  margin-bottom: 20px
+img
+  transition: 0.3s ease
+.mat-card-content
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+.star-icon
+  color: #f1f1f1
+  font-size: 20px
+  visibility: hidden
+.starred
+  margin-bottom: 20px
+  display: flex
+  flex-direction: column
+span
+  text-align: center 
+@media screen and ( max-width: 1024px )
+  .card-product
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+
+  
+@media screen and ( max-width: 600px )
+  .card-product
+    grid-template-columns: 1fr 1fr
+
+
+
+

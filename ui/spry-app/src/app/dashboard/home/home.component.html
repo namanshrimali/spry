@@ -1,19 +1,25 @@
-<mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-  
+<div class = "home-content">
+	<div class="tasks">
+		<span>My Tasks<i class="material-icons">check_box</i></span>
+		<div class="task" *ngFor="let task of tasks">
+			<mat-card class="task-card" [ngStyle]="{'border-left': '5px solid ' + task.associatedColour }">
+				<mat-card-content>
+					<p id="card-text-content">
+						{{task.description}}
+					</p>
+					<div class="card-info-icons">
+						<div id="task-due-date"><span class="material-icons">schedule</span> {{task.dueDate | date:'MMM dd'}}</div>
+						<img id="user-avatar" src="assets/images/Max-512.png" />
+					</div>
+				</mat-card-content>
+			</mat-card>
+			<div class="task-associated-product">
+				<div id="product-label">{{task.productName}}</div>
+				<div id="product-label">- {{task.sprintName}}</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="sidenav">
+	</div>
+</div>

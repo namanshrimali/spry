@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>New Product</h2>
+<div mat-dialog-content>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Product Name</mat-label>
+        <input matInput [formControl]="productFormControl" cdkFocusInitial>
+        <mat-error *ngIf="productFormControl.hasError('required')">
+            Product Name is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="productFormControl.hasError('pattern')">
+            Please enter a valid product name
+        </mat-error>
+        <mat-error *ngIf="productFormControl.hasError('minlength')">
+            Product Name should be atleast 5 characters
+        </mat-error>
+        <mat-error *ngIf="productFormControl.hasError('maxlength')">
+            Product Name should be atmost 30 characters
+        </mat-error>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button  color="primary" mat-button [disabled]="!productFormControl.valid"
+        [mat-dialog-close]="productFormControl">Create</button>
+    <button mat-raised-button mat-button (click)="onNoClick()">Cancel</button>
+</div>

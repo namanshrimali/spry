@@ -1,13 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { DashboardData } from '../model/dashboard-data';
 import { DashboardService } from '../service/dashboard.service';
+import {MatDialog} from '@angular/material/dialog';
+import { ProductCreateDialogComponent } from '../product-create-dialog/product-create-dialog.component';
 
+export interface DialogData {
+  name: string;
+}
 @Component({
   selector: 'app-boards',
   templateUrl: './boards.component.html',
   styleUrls: ['./boards.component.sass']
 })
 export class BoardsComponent implements OnInit {
+  product;
   userAssociatedProducts: DashboardData = {
     all: [
       {id: '2', name: 'Spry Agile Product',
@@ -23,9 +29,18 @@ export class BoardsComponent implements OnInit {
     isStarred: true},
   ]
 };
-  constructor(private dashboardService: DashboardService) { }
-
+  constructor(private dashboardService: DashboardService, public dialog: MatDialog) { }
   ngOnInit(): void {
   }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ProductCreateDialogComponent, {
+      width: '270px'
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.product = result;
+      console.log(this.product);
+    });
+  }
 }
